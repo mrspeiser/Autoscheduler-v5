@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    
+</head>
+<body>
+    <h1>Submit Form:</h1>
+    <form method="POST" action="/incomingProject" id="form1">
+        <input style="display:block; margin: 5px 0px" type="text" placeholder="Title" name="Title">
+        <input style="display:block; margin: 5px 0px" type="text" placeholder="Content Length (minutes)" name="Content Length">
+        <input style="display:block; margin: 5px 0px" type="text" placeholder="Number Languages" name="Num Languages">
+        <label>Project Start Datetime:</label>
+        <input style="display:block; margin: 5px 0px" type="datetime-local" name="startDatetime">
+        <hr>
+        <label><input id="specify" type="checkbox" >Specify Resources</label>
+        <br />
+        <br />
+        <label>Number of Ingest:</label>
+        <input style="display:block; margin: 5px 0px" type="number" placeholder="" value="1" name="numIngest">
+        <div class="ingestSelectionWrapper" style="margin-bottom:14px;"></div>
+        <label>Number of Mixers:</label>
+        <input style="display:block; margin: 5px 0px" type="number" placeholder="" value="1" name="numMixers">
+        <div class="initialSelectionWrapper" style="margin-bottom:14px;"></div>
+        <label>Number of Mixtechs:</label>
+        <input style="display:block; margin: 5px 0px" type="number" placeholder="" value="2" name="numMixtechs">
+        <div class="mixtechSelectionWrapper" style="margin-bottom:14px;"></div>
+        <label>Number of numQcs:</label>
+        <input style="display:block; margin: 5px 0px" type="number" placeholder="" value="2" name="numQcs">
+        <div class="qcSelectionWrapper" style="margin-bottom:14px;"></div>
+        <label>Number of Consolidation:</label>
+        <input style="display:block; margin: 5px 0px" type="number" placeholder="" value="1" name="numConsolidateion">
+        <div class="consSelectionWrapper" style="margin-bottom:14px;"></div>
+        <label>Number of finalmixers:</label>
+        <input style="display:block; margin: 5px 0px" type="number" placeholder="" value="1" name="numFinalmix">
+        <div class="finalmixSelectionWrapper" style="margin-bottom:14px;"></div>
+        <label>Number of Deliverables:</label>
+        <input style="display:block; margin: 5px 0px" type="number" placeholder="" value="1" name="numDeliverables">
+        <div class="deliverablesSelectionWrapper" style="margin-bottom:14px;"></div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="main.js"></script>
+</body>
+</html>

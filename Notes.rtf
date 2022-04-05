@@ -1,0 +1,76 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red202\green202\blue202;}
+{\*\expandedcolortbl;;\cssrgb\c83137\c83137\c83137;}
+\margl1440\margr1440\vieww13520\viewh14580\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+Most Recent Updates:\
+\
+The biggest challenge so far when creating this application has been to manage the growing amount of complexity as new requirements have been to the project. Handing the logic tree\'92s as to when to split bookings, update bookings, create bookings, and specify certain data under certain circumstances has been difficult.\
+\
+Once I would get logic under one circumstance to work and work well, overall business logic would change slightly causing bugs usually with overlaps in bookings.\
+\
+
+\b The most recent files
+\b0  I have come up with to help solve these problems are the prototype.js files which you can find here:\
+
+\b /core/prototype.js\
+/util/lib/prototypes.js\
+/util/lib/returns.js\
+
+\b0 \
+These have been the most recent paradigms I have come up with to hopefully minimize the amount of changes I will need to make. \
+\
+The \
+
+\b dataprocessor(dataObj, callback1, callback2, callback3),\
+
+\b0 And the \
+
+\b dataprocessorSync(dataOjbect, callback1, callback2, callback3);\
+
+\b0 \
+Were built to help the ordering or logical steps to manage and organize all the data that needs to be created before locally calculating which resource to select and phases of making decisions inside the application.\
+\
+I would love to hear your feedback or your suggestions eventually once you get some more time with the code.\
+\
+_______________\
+\
+Original only consisted of 6 phases. Ingest, MixerInitial, MT, QC, MixerFinal, Deliver. \
+\
+Now there are 7 phases including the consolidation.\
+\
+The Original function that was being used was the 
+\b exports.getBookings
+\b0  function inside: 
+\b /util/bookings/postPosition.js\
+\
+\
+
+\b0 Since that function was written I have refactored it and you can see a newer versions exports.aBooking function inside: 
+\b /util/bookings/postProjection.js\
+\
+Inside the postProjections.js 
+\b0 file you will see a ton of functions that do similar things. A lot of these functions were being used to test and 
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+
+\b0 This function would receive up to 8 parameters used to create the initial booking object so that we can parse the request and send it to hubplanner.\
+\
+The object to send to hub planner needs:\
+Example:\
+\
+\{\
+  projectId: 329fj03j9f902i939,\
+  resourceId: 939939020939203,\
+  bookingTitle: \'93ProjectTitle - Ingest\'94,\
+  start: 2018-12-30 09:00\'94,\
+  end: 2018-12-30 18:00\'94,\
+  Metadata: \'91PENDING\'92\
+\}\
+\
+}
